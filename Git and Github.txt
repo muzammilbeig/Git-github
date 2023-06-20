@@ -1,0 +1,154 @@
+Git
+
+gitbash -  terminal hota h
+--
+
+Untracked & Staged file
+
+Untracked-->Staged-->Unmodified-->modified
+
+Untracked - Git ko koi mtlb nhi hoga
+ 
+Staged - jo chize commit me jati h
+
+Unmodified - jb commit krte h tb file unmodified me jati h
+		kuch changes krte h to wo modified me jaygi file
+
+Modified - kuch bhi changes honge file me yha pr ayaga
+		fir staged hoga then commit
+--------------
+
+in gitbash
+	touch about.html
+-
+
+jb file edit hogi to wo modified me ajaygi
+
+for clearing the terminal
+	clear
+---
+
+checkout: jo last commit tha use waps la dega
+		agr new file me kuch gadbad krdi h to
+
+	git checkout contact.html
+
+for all files
+	git checkout -f
+---
+
+agr pura commit data dekhna h
+	git log
+
+agr bht sare h to
+	git log -p -5
+
+-- 
+agr quit krna ho to
+	q
+--------
+git diff
+	difference btata h
+	ye compare krta h working directory ko staging area se	
+
+agr last commit se compare krna h to
+	git diff --staged
+-----
+
+agr commit and staging dono ek sath krna ho
+	git commit -a -m "abc"
+--
+
+agr file dekhni ho
+	ls
+--
+
+agr file remove krni h
+	git rm waste.html
+		delete bhi krega and staging area se bhi hta dega
+
+if we want to remove file from staging area only
+	git rm --cached waste.html	
+-----
+
+if we want to check modified file name
+	git status -s
+	
+	phla wala agr arha h to staging e modified hui h
+	dusra wala h to working tree me modified hui h
+---
+
+If we want to ignore files in Git
+	touch .gitignore
+		git ignore file me
+			mylogs.log
+		#isse ye check krega or kahi pr bhi file hogi to ignore kr dega				
+
+koi bhi file jiski extension .log ho wo ignore ho jaye	
+	*.log
+
+agr bs bahar wali file commit na ho, andar folder me ho to ho jaye then
+	/mylogs.log
+	#jaha pr gitignore h whi pr ignore krega, baki jagha skip krega
+
+agr pure folder ko ignore krna ho to
+	folderName/
+-----
+
+Branches
+	apn alg branches bna skte h, isse main code pr frk nhi pdega
+
+create krna ho branch to
+	git branch feature1
+
+check krna ho branches
+	git branch
+
+branch krna ho to
+	git checkout feature1
+		ab isme sb kaam kr skte h, master branch ko frk nhi pdega
+
+	jb final ho jayga then master me merge kr skte h
+
+ab agar waps master me jana ho to
+	git checkout master	
+		#ab isko frk nhi pdega feature1 me kuch bhi hua ho
+		
+	#branches kitni bhi bna skte h
+-
+
+agr merge krna ho apni branch master me
+	git checkout master
+	git merge feature1
+
+create a branch and switched to new branch automatically
+	git checkout -b flask
+------------------------------
+
+Github:
+	Hosting service for git tepository
+	
+	Remote repository ko connect kr denge local se
+
+	check krne k lye
+		git remote
+		git remote -v
+--
+
+Private repo
+	agr connect krna h to SSH bnana pdega
+---
+
+commits bhi dekh skte h
+	kitni bar kya2 commit kra h
+--
+
+	git push -u origin master
+	ab next tym se git push se kaam chl jayga
+		git push
+----
+
+Clone
+	git clone url
+----------------
+
